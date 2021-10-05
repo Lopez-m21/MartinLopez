@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+    <title>Inicio de la plataforma</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+</head>
+<body>
+    <nav class="navbar navbar-dark bg-dark">
+    <a href="/" class= "navbar-brand">Registro</a>
+    </nav>
+    <div class="container">
+        <div class="col-md-5">
+            <div class="card">
+                <div class="card-body">
+                    <form action="/add" method="POST">
+                        <div class="form-group">
+                            <input type="text" name="Nombre" placeholder="Nombre" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="Apellido" placeholder="Apellido" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="Edad" placeholder="Edad" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="Genero" placeholder="Genero" class="form-control">
+                        </div>
+                        <button class="btn btn-primary"> Registrar </button>
+                    </form>
+                </div>
+            </div>
+    </div>
+        <div class="col-md-5">
+            <p> Parrafo</p>
+        </div>
+    </div>
+</body>
+</html>
