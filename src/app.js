@@ -14,8 +14,7 @@ app.set('views', path.join(__dirname, 'views'));
 //se configura el motor de vistas
 app.set('view engine', 'ejs');
 //conexion BD
-mongoose.connect('mongodb+srv://ClusterMartin:t.3n%5c%$p8Emah@cluster0.rndga.mongodb.net/VicMusic?retryWrites=true&w=majority')
-.then(bd => console.log('BD conectada')).catch(err => console.log('err'));
+mongoose.connect('mongodb+srv://ClusterMartin:Lopez.F@cluster0.rndga.mongodb.net/VicMusic?retryWrites=true&w=majority').then(bd => console.log('BD conectada')).catch(err => console.log('err'));
 
 //middleware
 app.use(log('dev'));

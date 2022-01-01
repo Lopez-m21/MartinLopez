@@ -1,10 +1,10 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const Registrar = new Schema({
+const Valor = new Schema({
     Nombre: String,
     Apellido: String,
-    Edad: Int32Array,
+    Edad: String,
     Genero: String
-});
-module.exports = mongoose.model('Registro', Registrar);
+}); 
+module.exports =mongoose.model('VicMusic', Valor);

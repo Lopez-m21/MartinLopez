@@ -1,41 +1,66 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   
-    <title>Inicio de la plataforma</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <title>Inicio</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+
 </head>
 <body>
     <nav class="navbar navbar-dark bg-dark">
-    <a href="/" class= "navbar-brand">Registro</a>
+        <a href="/" class="navbar-brand">Vic Music</a>
     </nav>
+    
     <div class="container">
         <div class="col-md-5">
-            <div class="card">
-                <div class="card-body">
-                    <form action="/add" method="POST">
-                        <div class="form-group">
-                            <input type="text" name="Nombre" placeholder="Nombre" class="form-control">
-                        </div>
-                        <div class="form-group">
-                            <input type="text" name="Apellido" placeholder="Apellido" class="form-control">
-                        </div>
-                        <div class="form-group">
-                            <input type="text" name="Edad" placeholder="Edad" class="form-control">
-                        </div>
-                        <div class="form-group">
-                            <input type="text" name="Genero" placeholder="Genero" class="form-control">
-                        </div>
-                        <button class="btn btn-primary"> Registrar </button>
-                    </form>
-                </div>
-            </div>
-    </div>
+           <div class="card">
+               <div class="card-body">
+                   <form action="/add" method="POST">
+                       <h2>Ingresar datos del artista</h2>
+                    <div class="form-group">
+                        <input type="text" name="Nombre" placeholder="Nombre" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="Apellido" placeholder="Apellido" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="Edad" placeholder="Edad" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="Genero" placeholder="Genero" class="form-control">
+                    </div>
+                    <button class="btn btn-primary">Registrar</button>
+                </form>
+               </div>
+           </div>
+        </div>
+        <h1>Datos registrados</h1>
         <div class="col-md-5">
-            <p> Parrafo</p>
+            <table class="table table-bordered table-hover">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Nombre</th>
+                        <th>Apellido</th>
+                        <th>Edad</th>
+                        <th>Genero</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% for(var i = 0; i < valores.length; i++){  %>
+                        <tr>
+                            <td><%= i+1  %></td>
+                            <td><%= valores[i].Nombre  %></td>
+                            <td><%= valores[i].Apellido  %></td>
+                            <td><%= valores[i].Edad  %></td>
+                            <td><%= valores[i].Genero  %></td>
+                            <td><a href = '/del/<%= valores[i].id %>'>eliminar</a>
+                                <a href = '/edit/<%= valores[i].id %>'>modificar</a></td>
+                        </tr>
+                    <% } %>
+                </tbody>
+            </table>
         </div>
     </div>
 </body>
